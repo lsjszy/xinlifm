@@ -24,32 +24,32 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "assets/tabs/跑.png",
-        "selectedIconPath": "assets/tabs/干饭.png"
+        "iconPath": "assets/tabs/首页.png",
+        "selectedIconPath": "assets/tabs/首页1.png"
       },
       {
         "pagePath": "pages/read/read",
         "text": "阅读",
-        "iconPath": "assets/tabs/赖床.png",
-        "selectedIconPath": "assets/tabs/read-active.png"
+        "iconPath": "assets/tabs/阅读.png",
+        "selectedIconPath": "assets/tabs/work-order-mana.png"
       },
       {
         "pagePath": "pages/FM/FM",
         "text": "FM",
-        "iconPath": "assets/tabs/刷手机.png",
-        "selectedIconPath": "assets/tabs/fm-active.png"
+        "iconPath": "assets/tabs/试听.png",
+        "selectedIconPath": "assets/tabs/听歌 (1).png"
       },
       {
         "pagePath": "pages/advisory/advisory",
         "text": "心理咨询",
-        "iconPath": "assets/tabs/假装在锻炼.png",
-        "selectedIconPath": "assets/tabs/message-active.png"
+        "iconPath": "assets/tabs/信息.png",
+        "selectedIconPath": "assets/tabs/咨询.png"
       },
       {
         "pagePath": "pages/me/me",
         "text": "我的",
-        "iconPath": "assets/tabs/努力工作.png",
-        "selectedIconPath": "assets/tabs/profile-active.png"
+        "iconPath": "assets/tabs/我的.png",
+        "selectedIconPath": "assets/tabs/cust-mana.png"
       }
     ]
   },

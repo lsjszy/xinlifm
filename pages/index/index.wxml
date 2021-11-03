@@ -1,49 +1,43 @@
-<view class="container">
-  <!-- 搜索框 -->
-  <van-search class="search" value="{{ value }}" placeholder="请输入搜索关键词" show-action bind:search="onSearch" bind:cancel="onCancel"></van-search>
-  <!-- 搜索历史 -->
-  <view>
-    <view wx:for="{{list}}" wx:key="{{index}}" class="item" id="{{item.id}}" bindtap="handleItemTap">
-      <view>{{ item }}</view>
-      <view class="item-message">{{ item.message }}</view>
-    </view>
-  </view>
-  <!-- 轮播图 -->
-  <scroll-view class="content" scroll-y="{{true}}">
-    <swiper class="slide" indicator-dots="{{true}}" circular="{{true}}" indicator-active-color="white">
-      <swiper-item class="slide_item">
-        <image src="https://up.enterdesk.com/edpic/ff/30/68/ff306857d5d21a4a7f8fc64cd6306edd.jpg" mode="widthFix" />
-      </swiper-item>
-      <swiper-item class="slide_item">
-        <image src="https://pic3.zhimg.com/v2-460a69ba1df18a1146eef78ea41a8323_r.jpg?source=1940ef5c" mode="widthFix" />
-      </swiper-item>
-      <swiper-item class="slide_item">
-        <image src="https://tenfei04.cfp.cn/creative/vcg/800/new/VCG211178908145.gif" mode="widthFix" />
-      </swiper-item>
-      <swiper-item class="slide_item">
-        <image src="http://p5.itc.cn/images01/20200831/3eb0968dc82e4359888a60dc126f798b.jpeg" />
-      </swiper-item>
-      <swiper-item class="slide_item">
-        <image src="https://alifei01.cfp.cn/creative/vcg/800/new/VCG211301828852.jpg" mode="widthFix" />
-      </swiper-item>
+<!-- 搜索框 -->
+<view class="search">
+  <icon type="search" class="search-img"></icon>
+  <input type="text" placeholder="请输入搜索关键字" bindfocus="onbindfocus"></input>
+  <icon type="clear" class="clear_img" wx:if="{{search_clear}}" bindtap="onbingtop"></icon>
+</view>
+<view wx:if="{{contaoner_show}}">
+  <!-- 顶层轮播图 -->
+  <view class='container'>
+    <swiper style="display: flex;flex-direction: column;justify-content: center;align-items: center;overflow:unset;width:100%;height:360rpx;margin:5rpx;" bindchange="changeSwiper" previous-margin="150rpx" next-margin="150rpx" circular="true" autoplay="true" interval="2000">
+      <block wx:for="{{imgList}}" wx:key>
+        <swiper-item class=" {{currentIndex == index ? 'swiperItemActive': 'swiperItem'}}">
+          <image mode="aspectFill" src='{{item.img}}' class="imageItem {{currentIndex == index ? 'active': ''}}"></image>
+        </swiper-item>
+      </block>
     </swiper>
-  </scroll-view>
-  <view class="content_list">
-    <view class="content_item">
-      <navigator class="content_url" url="/pages/index/index" open-type="switchTab">心理科普</navigator>
-      <navigator class="content_url" url="/pages/index/index" open-type="switchTab">人际交往</navigator>
+  </view>
+  <view class="radio">
+    <!-- <view class="content">
+      <navigator class="content_url" url="/pages/content/content" open-type="reLaunch">
+        心理科普
+      </navigator>
+      <navigator class="content_url" url="/pages/index/index" open-type="reLaunch">人际交往</navigator>
       <navigator class="content_url" url="/pages/index/index" open-type="switchTab">两性情感</navigator>
       <navigator class="content_url" url="/pages/index/index" open-type="switchTab">家庭关系</navigator>
       <navigator class="content_url" url="/pages/index/index" open-type="switchTab">职场社交</navigator>
-    </view>
-    <van-grid direction="horizontal" column-num="2" gutter="{{ 10 }}">
-      <van-grid-item wx:for="{{slides}}" wx:for-item="item" wx:key="id" text="{{item.title}}">
-        <view slot="icon" class="img_list">
+    </view> -->
+    <van-grid direction="horizontal" column-num="2" gutter="{{ 10 }}" class="radio_list">
+      <van-grid-item wx:for="{{slides}}" wx:for-item="item" wx:key="id" text="{{item.title}}" class="radio_item">
+        <view slot="icon" class="radio_img">
           <image class="im" src="/assets/tabs/暂停.png" />
           <image class="img" src="{{item.cover}}" />
         </view>
       </van-grid-item>
     </van-grid>
+    <view class="hot" wx:for-item="item" wx:key="id" text="{{item.title}}" wx:for="{{slides}}">
+      <text>{{item.title}}</text>
+      <image src="{{item.cover}}"></image>
+      <!-- <image src="/assets/tabs/暂停.png"></image> -->
+    </view>
   </view>
   <!-- 返回顶部 -->
   <image src="/assets/tabs/挥手小绿人.png" class="goTop" bindtap="goTop"></image>

@@ -1,6 +1,59 @@
-.content .slide_item image {
-  width: 100%;
+.search {
+  background-color: #ffffff;
+  height: 60rpx;
+  width: 96%;
+  display: flex;
+  flex-direction: row;
+  border-radius: 30rpx;
+  margin: 21rpx 0 5rpx 12rpx;
+}
+.search .search-img {
+  margin: auto 0 auto 20rpx;
+}
+.search input {
   height: 100%;
+  width: 600rpx;
+}
+.search .clear_img {
+  margin: 9rpx 18rpx 4rpx 24rpx;
+}
+page {
+  background: rgba(233, 230, 230, 0.829);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .swiperItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: unset;
+  z-index: 0.5;
+}
+.container .swiperItemActive {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: unset;
+  z-index: 1;
+}
+.container .imageItem {
+  height: 300rpx;
+  width: 530rpx;
+  border-radius: 10rpx;
+  margin: 20rpx 0rpx;
+  /* opacity: 0.5; */
+  box-sizing: border-box;
+}
+.container .active {
+  transform: scale(1.14);
+  transition: all 0.2s ease-in 0s;
+  /* opacity: 1; */
 }
 /* 返回顶部 */
 .goTop {
@@ -10,10 +63,10 @@
   bottom: 80rpx;
   right: 30rpx;
 }
-.content_list .content_item {
+.radio .content {
   display: flex;
 }
-.content_list .content_item .content_url {
+.radio .content .content_url {
   width: 200rpx;
   height: 60rpx;
   vertical-align: middle;
@@ -25,17 +78,30 @@
   font-size: 26rpx;
   background: #e0e9f1;
 }
-.content_list .img_list {
-  margin: 20rpx;
-}
-.content_list .img_list .img {
+.radio .radio_item {
   width: 120rpx;
   height: 100rpx;
 }
-.content_list .im {
+.radio .radio_item .radio_img {
+  margin: 0 16rpx 5rpx 3rpx;
+}
+.radio .radio_item .radio_img .img {
+  width: 120rpx;
+  height: 100rpx;
+  margin: 0 16rpx 5rpx 3rpx;
+}
+.radio .radio_item .im {
   width: 40rpx;
   height: 40rpx;
   position: absolute;
   margin: 60rpx 5rpx 0 78rpx;
   filter: opacity(0.6);
+}
+.radio .hot {
+  font-size: 50rpx;
+  margin-left: 50rpx;
+}
+.radio .hot image {
+  width: 300rpx;
+  height: 200rpx;
 }
