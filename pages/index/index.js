@@ -1,34 +1,39 @@
 // 获取应用实例
 const app = getApp();
-import { requestGet,SlidesURL } from "../../utils/reqeust";
+import {
+  requestGet,
+  SlidesURL,
+  Found
+} from "../../utils/reqeust";
+
+import Toast from '../../components/vant/toast/toast';
 
 Page({
   data: {
     slides: [],
-    contaoner_show: true,
-    search_clear: false,
+    founds: [],
+    index: 0,
     currentIndex: 0,
     currentIndex1: 0,
     currentIndex2: 0,
-   
     imgList: [{
-        img: "https://tse1-mm.cn.bing.net/th/id/R-C.99c0e3292e36de16889ff30b6eaeae26?rik=RasRwrZXouynBg&riu=http%3a%2f%2fimg95.699pic.com%2fphoto%2f50053%2f4918.jpg_wh860.jpg&ehk=1TzQmCyz5iXmumGeeKbP6Txr%2fIOLL9Cd2PydquRui3Q%3d&risl=&pid=ImgRaw&r=0"
+        img: "https://tse1-mm.cn.bing.net/th/id/OIP-C.MXkAJ0QFmeokbGMZHgRv8QHaHW?w=164&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7"
       },
       {
-        img: "https://pic.qbaobei.com/Uploads/Picture/2018-01-24/5a67ff22d93bd.jpg"
-    },
-      
-    {
-      img: "https://ossimg.xinli001.com/20170125/940ead5ab16c34b0e849358b8b40c284.jpg"
-    },
-    {
-      img: "https://ossimg.xinli001.com/20161215/01096c03703bcc9a7fde43dc3c53ac05.jpg"
+        img: "https://c-ssl.duitang.com/uploads/blog/202101/20/20210120021629_0d04f.jpeg"
       },
-    {
-      img: "https://ossimg.xinli001.com/20170315/20b934c7a025b1a9944f76acc3643fcd.jpg"
-    },
+      {
+        img: "https://c-ssl.duitang.com/uploads/item/202001/30/20200130160650_eemik.png"
+      },
+      {
+        img: "https://img.38xf.com/uploads/20180611/a97850731c2aca8847fc5eb5feca1812.jpg"
+      },
+      {
+        img: "https://pic2.zhimg.com/v2-9f2b856a192704d988752795588346ed_r.jpg"
+      },
     ],
   },
+
   changeSwiper: function (e) {
     this.setData({
       currentIndex: e.detail.current
@@ -39,40 +44,50 @@ Page({
       currentIndex1: e.detail.current
     })
   },
-  
-    onLoad() {
+
+  onLoad() {
     this.getSlidesData();
+    this.Founds();
+
   },
   async getSlidesData() {
     const result = await requestGet(SlidesURL);
     this.setData({
-      slides: result.data,
+      slides: result.data
     });
   },
-// 搜索框
-onbindfocus:function(event){
-var value = event.detail.value
-console.log(value)
-this.setData({
-  contaoner_show: false,
-  search_clear:true
-  })
-},
-  
-  onbingtop: function () {
-    this.setData({
-      contaoner_show: true,
-      search_clear:false
+
+  // 发现
+  async Founds() {
+    Toast.loading({
+      duration: 0, //一直提示加载中
+      message: '加载中...',
+      forbidClick: true,
+      loadingType: 'spinner',
+      selector: '#van-toast',
+    });
+
+
+    // ? offset = 0 & limit = 10 & key = 046 b6a2a43dc6ff6e770255f57328f89
+    const result = await requestGet(Found, {
+      offset: this.data.index,
+      limit: 20
     })
+    this.setData({
+      founds: [...this.data.founds, ...result.data]
+    });
+    Toast.clear();
+    console.log(this.data.founds);
   },
-
-  
-
-
-
-
+  onReachBottom: function () {
+    this.setData({
+      index: this.data.index + 20
+    })
+    this.Founds()
+    console.log(this.data.index);
+  },
   //回到顶部
-  goTop: function (e) {  // 一键回到顶部
+  goTop: function (e) { // 一键回到顶部
     if (wx.pageScrollTo) {
       wx.pageScrollTo({
         scrollTop: 0
@@ -85,5 +100,3 @@ this.setData({
     }
   },
 });
-
-

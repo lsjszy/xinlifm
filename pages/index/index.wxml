@@ -1,10 +1,14 @@
-<!-- 搜索框 -->
-<view class="search">
-  <icon type="search" class="search-img"></icon>
-  <input type="text" placeholder="请输入搜索关键字" bindfocus="onbindfocus"></input>
-  <icon type="clear" class="clear_img" wx:if="{{search_clear}}" bindtap="onbingtop"></icon>
-</view>
-<view wx:if="{{contaoner_show}}">
+<view class="box">
+  <!-- 背景图片 -->
+  <!-- <view>
+    <image class="background" src="https://down.52pk.com/uploads/litimg/181203/141R250392959.gif"></image>
+  </view> -->
+  <!-- 搜索框 -->
+  <view class="search">
+    <icon class="search_img" type="search" size="23"></icon>
+    <input placeholder="请输入搜索关键字" type="text"></input>
+    <icon type="clear" size="23" class="clear"></icon>
+  </view>
   <!-- 顶层轮播图 -->
   <view class='container'>
     <swiper style="display: flex;flex-direction: column;justify-content: center;align-items: center;overflow:unset;width:100%;height:360rpx;margin:5rpx;" bindchange="changeSwiper" previous-margin="150rpx" next-margin="150rpx" circular="true" autoplay="true" interval="2000">
@@ -15,30 +19,62 @@
       </block>
     </swiper>
   </view>
-  <view class="radio">
-    <!-- <view class="content">
+  <!-- 热门推荐 -->
+  <view class="hot">
+    <view class="tuijian">
+      <!-- 波浪线 -->
+      <wavy></wavy>
+      <text class="hot_text">热门推荐</text>
+    </view>
+    <view class="content">
       <navigator class="content_url" url="/pages/content/content" open-type="reLaunch">
         心理科普
       </navigator>
-      <navigator class="content_url" url="/pages/index/index" open-type="reLaunch">人际交往</navigator>
+      <navigator class="content_url" url="http://yiapi.xinli001.com/fm/media-url/0/99391102" open-type="reLaunch">
+        人际交往
+      </navigator>
       <navigator class="content_url" url="/pages/index/index" open-type="switchTab">两性情感</navigator>
       <navigator class="content_url" url="/pages/index/index" open-type="switchTab">家庭关系</navigator>
       <navigator class="content_url" url="/pages/index/index" open-type="switchTab">职场社交</navigator>
-    </view> -->
-    <van-grid direction="horizontal" column-num="2" gutter="{{ 10 }}" class="radio_list">
-      <van-grid-item wx:for="{{slides}}" wx:for-item="item" wx:key="id" text="{{item.title}}" class="radio_item">
-        <view slot="icon" class="radio_img">
-          <image class="im" src="/assets/tabs/暂停.png" />
+    </view>
+  </view>
+  <!-- 播放列表 -->
+  <view class="play">
+    <van-grid gutter="{{ 10 }}" column-num="2">
+      <van-grid-item wx:for="{{slides}}" class="play_item" text="{{item.title}}" use-slot>
+        <view class="play_img">
+          <image class="im" src="http://www.icosky.com/icon/png/Media/Play%20Stop%20Pause/Play%20Normal.png" />
           <image class="img" src="{{item.cover}}" />
+        </view>
+        <view class="play_title">
+          <text>{{item.title}}</text>
         </view>
       </van-grid-item>
     </van-grid>
-    <view class="hot" wx:for-item="item" wx:key="id" text="{{item.title}}" wx:for="{{slides}}">
-      <text>{{item.title}}</text>
-      <image src="{{item.cover}}"></image>
-      <!-- <image src="/assets/tabs/暂停.png"></image> -->
+  </view>
+  <!-- 精选推荐 -->
+  <view class="found">
+    <!-- 波浪线 -->
+    <view class="bolangxian"></view>
+    <view class="caption">
+      <image src="/assets/tabs/星星.png" />
+      <text class="">精选推荐</text>
     </view>
+    <van-cell-group class="found_fo">
+      <van-cell class="found_item" use-label-slot wx:for="{{founds}}" wx:for-item="item" wx:key="id">
+        <!-- 图片 -->
+        <view slot="icon" class="found_img">
+          <image class="icon_img" src="{{item.cover}}" />
+        </view>
+        <!-- 标题 -->
+        <view slot="title" class="">
+          <view class="found_title">{{item.title}}</view>
+        </view>
+      </van-cell>
+    </van-cell-group>
   </view>
   <!-- 返回顶部 -->
-  <image src="/assets/tabs/挥手小绿人.png" class="goTop" bindtap="goTop"></image>
+  <view>
+    <image src="/assets/tabs/挥手小绿人.png" class="goTop" bindtap="goTop"></image>
+  </view>
 </view>

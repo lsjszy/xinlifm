@@ -14,7 +14,10 @@ export function requestGet(url, data) {
       //请求返回结果的数据类型
       dataType: "json",
       //请求回调
-      success: ({ statusCode, data }) => {
+      success: ({
+        statusCode,
+        data
+      }) => {
         if (statusCode === 200) {
           reslove(data);
         } else {
@@ -32,5 +35,6 @@ export function requestGet(url, data) {
 }
 
 
-export var SlidesURL = "https://bapi.xinli001.com/fm2/broadcast_list.json/?offset=0&speaker_id=0&tag=%E6%8A%91%E9%83%81%E7%97%87%E6%98%AF%E6%9D%A1%E9%BB%91%E7%8B%97&rows=10&key=046b6a2a43dc6ff6e770255f57328f89"//GET请求
+export var SlidesURL = "http://bapi.xinli001.com/fm2/broadcast_list.json/?offset=0&speaker_id=0&tag=%E6%8A%91%E9%83%81%E7%97%87%E6%98%AF%E6%9D%A1%E9%BB%91%E7%8B%97&rows=10&key=046b6a2a43dc6ff6e770255f57328f89" //GET请求
 
+export var Found = "http://yiapi.xinli001.com/fm/newfm-list.json"
