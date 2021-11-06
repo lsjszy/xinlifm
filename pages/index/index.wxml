@@ -20,27 +20,28 @@
     </swiper>
   </view>
   <!-- 热门推荐 -->
-  <!-- <view class="hot">
+  <view class="hot">
     <view class="tuijian">
-      <wavy>波浪线</wavy>
+      <image size="10" src="/assets/tabs/月亮.png" class="moon"></image>
       <text class="hot_text">热门推荐</text>
     </view>
     <view class="content">
-      <navigator class="content_url" url="/pages/content/content" open-type="reLaunch">
-        心理科普
-      </navigator>
-      <navigator class="content_url" url="http://yiapi.xinli001.com/fm/media-url/0/99391102" open-type="reLaunch">
-        人际交往
-      </navigator>
-      <navigator class="content_url" url="/pages/index/index" open-type="switchTab">两性情感</navigator>
-      <navigator class="content_url" url="/pages/index/index" open-type="switchTab">家庭关系</navigator>
-      <navigator class="content_url" url="/pages/index/index" open-type="switchTab">职场社交</navigator>
+      <van-grid column-num="4" square>
+        <van-grid-item icon="/assets/tabs/成长.png" text="自我成长" url="" />
+        <van-grid-item icon="/assets/tabs/情绪.png" text="情绪管理" />
+        <van-grid-item icon="/assets/tabs/人际网.png" text="人际沟通" />
+        <van-grid-item icon="/assets/tabs/恋爱.png" text="恋爱婚姻" />
+        <van-grid-item icon="/assets/tabs/职场.png" text="职场管理" />
+        <van-grid-item icon="/assets/tabs/亲子.png" text="亲子家庭" />
+        <van-grid-item icon="/assets/tabs/科普.png" text="心理科普" />
+        <van-grid-item icon="/assets/tabs/讲座.png" text="课程讲座" />
+      </van-grid>
     </view>
-  </view> -->
+  </view>
   <!-- 播放列表 -->
   <view class="radio">
     <view class="radio_item" wx:for="{{slides}}">
-      <view class="img">
+      <view class="img" icon="/assets/tabs/成长.png">
         <image class="im" src="http://www.icosky.com/icon/png/Media/Play%20Stop%20Pause/Play%20Normal.png" />
         <image class="" src="{{item.cover}}"></image>
       </view>
@@ -49,8 +50,6 @@
   </view>
   <!-- 精选推荐 -->
   <view class="found">
-    <!-- 波浪线 -->
-    <view class="bolangxian"></view>
     <view class="caption">
       <image src="/assets/tabs/星星.png" />
       <text class="">精选推荐</text>

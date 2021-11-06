@@ -48,7 +48,7 @@
   border-radius: 10rpx;
   margin: 20rpx 0rpx;
   /* opacity: 0.5; */
-  border: 3px double rgba(96, 191, 255, 0.3);
+  border: 3px double rgba(44, 44, 44, 0.3);
   box-sizing: border-box;
 }
 .container .active {
@@ -56,46 +56,21 @@
   transition: all 0.2s ease-in 0s;
   /* opacity: 1; */
 }
-.hot {
-  border-top: 6px double rgba(128, 190, 226, 0.3);
-  margin: 10rpx;
+.hot .tuijian {
+  margin: 10rpx 0 17rpx 300rpx;
 }
-.hot .tuijian wavy {
-  display: block;
-  height: 0.5em;
-  white-space: nowrap;
-  letter-spacing: 100vw;
-  padding-top: 0.5em;
-  overflow: hidden;
-  color: lightblue;
-}
-.hot .tuijian wavy::before {
-  content: "\2000\2000";
-  /* IE浏览器实线代替 */
-  text-decoration: overline;
-  /* 现代浏览器 */
-  text-decoration: overline wavy;
+.hot .tuijian .moon {
+  width: 50rpx;
+  height: 50rpx;
+  margin: 0 0 -6rpx 0;
 }
 .hot .tuijian .hot_text {
-  display: block;
-  text-align: center;
-  font-size: 50rpx;
+  font-size: 45rpx;
   color: #0f0f0f;
+  margin: 0 0 25rpx 0;
 }
-.hot .content {
-  display: flex;
-}
-.hot .content .content_url {
-  width: 200rpx;
-  height: 60rpx;
-  vertical-align: middle;
-  line-height: 60rpx;
-  color: #222020;
-  border-radius: 10rpx;
-  margin: 10rpx;
-  text-align: center;
-  font-size: 26rpx;
-  background: rgba(224, 233, 241, 0.3);
+.hot .content .van-grid-item {
+  border: 3px double rgba(128, 190, 226, 0.3);
 }
 .found {
   margin: 60rpx 0 0 0;
