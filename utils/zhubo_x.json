@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "van-tab": "../../components/vant/tab/index",
+        "van-tabs": "../../components/vant/tabs/index",
+        "van-field": "../../components/vant/field/index"
+
+    },
+    "navigationBarTitleText": "主播详情"
+}
