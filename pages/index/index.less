@@ -97,14 +97,6 @@ page {
 
 }
 
-/* 返回顶部 */
-.goTop {
-    height: 80rpx;
-    width: 80rpx;
-    position: fixed;
-    bottom: 80rpx;
-    right: 30rpx;
-}
 
 // 热门推荐
 .hot {
@@ -197,37 +189,69 @@ page {
 
         .found_title {
             height: 160rpx;
-            border: 3px dashed rgba(192, 158, 219, 0.3);
+            // border: 3px dashed rgba(192, 158, 219, 0.3);
             box-sizing: border-box;
             border-radius: 20rpx;
             color: #333;
             font-size: 26rpx;
             padding: 33rpx 0 0 11rpx;
         }
+
+        .pic {
+            width: 160rpx;
+            height: 200rpx;
+            position: absolute;
+            margin: 0 0 0 300rpx;
+            z-index: 1;
+        }
     }
 }
 
-播放 .play {
-    // .van-grid-item {
-    //     margin: 10rpx 0 0 10rpx;
-    // }
+// 播放列表
+.radio {
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10rpx 0 0 30rpx;
 
-    .img {
-        width: 260rpx;
-        height: 230rpx;
+    .radio_item {
+        width: 45%;
+        margin: 23rpx 23rpx 0 10rpx;
+        border-color: rgb(196, 221, 167);
         border-radius: 20rpx;
-    }
+        box-sizing: border-box;
 
-    .im {
-        width: 50rpx;
-        height: 50rpx;
-        position: absolute;
-        // filter: opacity(0.6);
-        margin: 10rpx 0 0 10rpx;
-    }
 
-    text {
-        color: #333;
-        font-size: 20rpx;
+        image {
+            width: 260rpx;
+            height: 200rpx;
+            margin: 23rpx 23rpx 0 32rpx;
+            border-radius: 20rpx;
+        }
+
+        .im {
+            position: absolute;
+            width: 60rpx;
+            height: 60rpx;
+            margin: 32rpx 0 0 36rpx;
+        }
+
+        text {
+            color: rgb(95, 160, 146);
+            font-size: 26rpx;
+            padding: 5rpx;
+            border-radius: 15rpx;
+        }
     }
+}
+
+/* 返回顶部 */
+.goTop {
+    height: 90rpx;
+    width: 90rpx;
+    position: fixed;
+    bottom: 80rpx;
+    right: 30rpx;
+    z-index: 10;
 }

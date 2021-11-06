@@ -20,10 +20,9 @@
     </swiper>
   </view>
   <!-- 热门推荐 -->
-  <view class="hot">
+  <!-- <view class="hot">
     <view class="tuijian">
-      <!-- 波浪线 -->
-      <wavy></wavy>
+      <wavy>波浪线</wavy>
       <text class="hot_text">热门推荐</text>
     </view>
     <view class="content">
@@ -37,20 +36,16 @@
       <navigator class="content_url" url="/pages/index/index" open-type="switchTab">家庭关系</navigator>
       <navigator class="content_url" url="/pages/index/index" open-type="switchTab">职场社交</navigator>
     </view>
-  </view>
+  </view> -->
   <!-- 播放列表 -->
-  <view class="play">
-    <van-grid gutter="{{ 10 }}" column-num="2">
-      <van-grid-item wx:for="{{slides}}" class="play_item" text="{{item.title}}" use-slot>
-        <view class="play_img">
-          <image class="im" src="http://www.icosky.com/icon/png/Media/Play%20Stop%20Pause/Play%20Normal.png" />
-          <image class="img" src="{{item.cover}}" />
-        </view>
-        <view class="play_title">
-          <text>{{item.title}}</text>
-        </view>
-      </van-grid-item>
-    </van-grid>
+  <view class="radio">
+    <view class="radio_item" wx:for="{{slides}}">
+      <view class="img">
+        <image class="im" src="http://www.icosky.com/icon/png/Media/Play%20Stop%20Pause/Play%20Normal.png" />
+        <image class="" src="{{item.cover}}"></image>
+      </view>
+      <text class="">{{item.title}}</text>
+    </view>
   </view>
   <!-- 精选推荐 -->
   <view class="found">
@@ -68,6 +63,7 @@
         </view>
         <!-- 标题 -->
         <view slot="title" class="">
+          <image class="pic" src="/assets/tabs/旗帜.png"></image>
           <view class="found_title">{{item.title}}</view>
         </view>
       </van-cell>
