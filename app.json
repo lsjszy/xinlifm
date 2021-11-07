@@ -5,7 +5,8 @@
     "pages/FM/FM",
     "pages/read/read",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/icon/icon"
   ],
   "window": {
     "backgroundTextStyle": "light",

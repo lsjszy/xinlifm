@@ -57,41 +57,59 @@
   /* opacity: 1; */
 }
 .hot .tuijian {
-  margin: 10rpx 0 17rpx 300rpx;
+  margin: 10rpx 0 35rpx 260rpx;
 }
 .hot .tuijian .moon {
-  width: 50rpx;
-  height: 50rpx;
-  margin: 0 0 -6rpx 0;
+  width: 90rpx;
+  height: 90rpx;
+  margin: 0 3rpx -12rpx 0;
+  border-radius: 50%;
 }
 .hot .tuijian .hot_text {
-  font-size: 45rpx;
-  color: #0f0f0f;
+  font-size: 40rpx;
+  color: #8fd3f3;
   margin: 0 0 25rpx 0;
+  background-image: -webkit-linear-gradient(#eee, #000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 3px double #e6ebb8;
 }
 .hot .content .van-grid-item {
   border: 3px double rgba(128, 190, 226, 0.3);
+  box-sizing: border-box;
+}
+.hot .content .content_icon .content_img {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 32rpx 0 0 36rpx;
 }
 .found {
-  margin: 60rpx 0 0 0;
-}
-.found .bolangxian {
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, rgba(41, 39, 39, 0), rgba(143, 192, 192, 0.75), rgba(32, 31, 31, 0));
+  margin: 50rpx 0 0 0;
 }
 .found .caption {
   margin: 10rpx 0 17rpx 300rpx;
   font-size: 40rpx;
 }
 .found .caption image {
-  width: 50rpx;
-  height: 50rpx;
-  margin: 0 0 -6rpx 0;
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0 8rpx -19rpx -20rpx;
+  background-color: rgba(215, 231, 231, 0.3);
+  border-radius: 50%;
+}
+.found .caption text {
+  background-image: -webkit-linear-gradient(#eee, #000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px transparent;
+  border-bottom: 3px double #e6ebb8;
+}
+.found .van-cell-group {
+  border-top: 2px dashed #e6ebb8;
+  margin-top: 26rpx;
 }
 .found .van-cell {
   width: 94%;
-  margin: 10rpx 0 0 20rpx;
   border-radius: 20rpx;
   border-bottom: 5px double rgba(148, 214, 226, 0.3);
 }
@@ -128,7 +146,8 @@
 .radio .radio_item {
   width: 45%;
   margin: 23rpx 23rpx 0 10rpx;
-  border-color: #c4dda7;
+  border: 1px dashed rgba(65, 171, 206, 0.3);
+  border-style: outset;
   border-radius: 20rpx;
   box-sizing: border-box;
 }
